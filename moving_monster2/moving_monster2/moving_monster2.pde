@@ -1,20 +1,29 @@
+
+int monsterX;
+
 void setup() {
   size (600, 600);
+  monsterX = 0;
 }
 
 
 
 void draw() {
   background(255);
-  monster(300,300);
+  monster(monsterX, 300);
+  monsterX = monsterX + 2;
+
+  if (monsterX > 800) {
+    monsterX = -200;
+  }
 }
 
 
 
 void monster(int x, int y) {
   pushMatrix();
-  translate(x,y);
-  
+  translate(x, y);
+
   //opener//
   fill(0);
   ellipse(0, -35, 300, 300);
