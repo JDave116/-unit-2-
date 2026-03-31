@@ -3,20 +3,33 @@
 //2-4//
 
 //int treeX
-  //int mtnX
+  int mtnX;
+  int mtnX2;
 
 
   void setup() {
   size(600, 600);
   //treeX = 300
-  //mtnX = 0
+  mtnX = 0;
+  mtnX2 = -800;
 }
 
 
 void draw() {
   background(88, 181, 229);
   noStroke();
-  mountains(0, -20);
+  mountains(mtnX, -20);
+  mtnX = mtnX+1;
+  if (mtnX > 800){
+    mtnX = -800;
+  }
+  
+  mountains(mtnX2, -20);
+  mtnX2 = mtnX2+1;
+  if (mtnX2 > 800){
+    mtnX2 = -800;
+  }
+  
   trees(0, 420);
   trees(60, 420);
   trees(120, 420);
